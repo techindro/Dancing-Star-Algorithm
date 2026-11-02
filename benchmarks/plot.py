@@ -29,7 +29,7 @@ ax[0].legend()
 
 # (b) time vs T for N = 60
 T, ms2 = B["T"], B["ms"]
-ax[1].plot(T, ms2, "o-", color="#16a34a", label="Dancing Star (measured)")
+ax[1].plot(T, ms2, "o-", color="#16a34a", label="Delta Star (measured)")
 ax[1].set_title("(b) Worst-case time vs time horizon T  (N = 60)")
 ax[1].set_xlabel("time horizon T"); ax[1].set_ylabel("time (ms)")
 ax[1].legend()
@@ -38,7 +38,7 @@ ax[1].legend()
 K = [int(k) for k in C["guards"]]
 x = range(len(K)); w = 0.38
 ax[2].bar([i - w/2 for i in x], C["static_collide_pct"], w, color="#dc2626", label="Plain shortest path (ignores time)")
-ax[2].bar([i + w/2 for i in x], C["dancing_collide_pct"], w, color="#2563eb", label="Dancing Star")
+ax[2].bar([i + w/2 for i in x], C["dancing_collide_pct"], w, color="#2563eb", label="Delta Star")
 for i in x: ax[2].text(i + w/2, 1.2, "0 %", ha="center", color="#2563eb", fontsize=9, weight="bold")
 ax[2].set_xticks(list(x)); ax[2].set_xticklabels(K)
 ax[2].set_xlabel("number of patrolling guards (30 × 30 grid, 300 random maps each)")
