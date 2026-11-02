@@ -1,5 +1,5 @@
-// Benchmarks for DancingStar. Prints CSV sections to stdout.
-#include "../src/dancingstar.hpp"
+// Benchmarks for DeltaStar. Prints CSV sections to stdout.
+#include "../src/deltastar.hpp"
 using namespace dancing;
 using Clock = std::chrono::steady_clock;
 
