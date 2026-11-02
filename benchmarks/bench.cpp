@@ -78,7 +78,7 @@ int main() {
             in.grid[N - 1][N - 2] = '#'; in.grid[N - 2][N - 1] = '#';   // wall the goal in
             int T = N;
             auto t0 = Clock::now();
-            DancingStar d(in.grid, in.guards, T);
+            DeltaStar d(in.grid, in.guards, T);
             auto res = d.solve({0, 0}, {N - 1, N - 1});
             ms += std::chrono::duration<double, std::milli>(Clock::now() - t0).count();
             exp += res.expanded;
@@ -93,7 +93,7 @@ int main() {
             auto in = makeInstance(N, 12, 0.0);
             in.grid[N - 1][N - 2] = '#'; in.grid[N - 2][N - 1] = '#';
             auto t0 = Clock::now();
-            DancingStar d(in.grid, in.guards, T);
+            DeltaStar d(in.grid, in.guards, T);
             auto res = d.solve({0, 0}, {N - 1, N - 1});
             ms += std::chrono::duration<double, std::milli>(Clock::now() - t0).count();
             exp += res.expanded;
@@ -101,7 +101,7 @@ int main() {
         std::cout << N << "," << T << ",12," << ms / reps << "," << exp / reps << "\n";
     }
     // 3) Safety comparison on random instances: static shortest path vs DancingStar
-    std::cout << "#compare\nguards,instances,static_collide_pct,dancing_collide_pct,dancing_solved_pct,avg_extra_steps\n";
+    std::cout << "#compare\nguards,instances,static_collide_pct,dancing_collide_pct,delta_solved_pct,avg_extra_steps\n";
     for (int K : {2, 5, 10, 15, 20}) {
         int N = 30, inst = 300, sc = 0, solved = 0, dc = 0, valid = 0; double extra = 0;
         for (int i = 0; i < inst; i++) {
@@ -110,7 +110,7 @@ int main() {
             if (sp.empty()) continue;
             valid++;
             if (collides(sp, in.guards)) sc++;
-            DancingStar d(in.grid, in.guards, 200);
+            DeltaStar d(in.grid, in.guards, 200);
             auto res = d.solve({0, 0}, {N - 1, N - 1});
             if (res.found) {
                 solved++;
