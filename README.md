@@ -1,6 +1,6 @@
-# Dancing Star Algorithm
+# Delta Star Algorithm
 
-Dancing Star Algorithm: a C++ path planner that finds the fastest route for a robot without hitting moving obstacles
+Delta Star Algorithm: a C++ path planner that finds the fastest route for a robot without hitting moving obstacles
 
 It finds the fastest safe path for a robot on a grid when other things on the grid are moving. It's A\* with one extra idea: the state is `(x, y, t)`, so time is part of it. That lets the robot wait when waiting is the best move.
 
@@ -95,7 +95,7 @@ The contest problem in [PROBLEM.md](PROBLEM.md) has `n, m ≤ 30`, `k ≤ 10`, `
 ## What's in the repo
 
 ```
-DancingStar/
+DeltaStar/
 ├── README.md
 ├── PROBLEM.md          # the contest-style problem
 ├── MATH.md             # formulas, proof, complexity
