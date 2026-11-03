@@ -100,8 +100,8 @@ int main() {
         }
         std::cout << N << "," << T << ",12," << ms / reps << "," << exp / reps << "\n";
     }
-    // 3) Safety comparison on random instances: static shortest path vs DancingStar
-    std::cout << "#compare\nguards,instances,static_collide_pct,dancing_collide_pct,delta_solved_pct,avg_extra_steps\n";
+    // 3) Safety comparison on random instances: static shortest path vs DeltaStar
+    std::cout << "#compare\nguards,instances,static_collide_pct,delta_collide_pct,delta_solved_pct,avg_extra_steps\n";
     for (int K : {2, 5, 10, 15, 20}) {
         int N = 30, inst = 300, sc = 0, solved = 0, dc = 0, valid = 0; double extra = 0;
         for (int i = 0; i < inst; i++) {
