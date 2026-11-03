@@ -1,6 +1,6 @@
 // Reference solution for the problem "Robot and Patrolling Guards" (see PROBLEM.md)
 #include "../src/Deltastar.hpp"
-using namespace dancing;
+using namespace delta;
 
 int main() {
     int n, m, k, T;
