@@ -1,5 +1,5 @@
 // Reference solution for the problem "Robot and Patrolling Guards" (see PROBLEM.md)
-#include "../src/dancingstar.hpp"
+#include "../src/Deltastar.hpp"
 using namespace dancing;
 
 int main() {
@@ -20,7 +20,7 @@ int main() {
         gd.route.resize(L);
         for (auto& p : gd.route) { int r, c; std::cin >> r >> c; p = {c - 1, r - 1}; }
     }
-    DancingStar planner(grid, guards, T);
+    DeltaStar planner(grid, guards, T);
     auto res = planner.solve(s, g);
     std::cout << (res.found ? res.steps : -1) << "\n";
 }
