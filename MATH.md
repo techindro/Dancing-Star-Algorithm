@@ -1,6 +1,6 @@
-# Dancing Star Algorithm – Mathematical Formulation
+# Delta Star Algorithm – Mathematical Formulation
 
-*Formulas, correctness proof and complexity derivation for the Dancing Star Algorithm (Space-Time A\* with patrolling obstacles).*
+*Formulas, correctness proof and complexity derivation for the Delta Star Algorithm (Space-Time A\* with patrolling obstacles).*
 
 [← Back to README](README.md)
 
