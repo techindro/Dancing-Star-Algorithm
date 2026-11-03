@@ -130,11 +130,11 @@ python3 benchmarks/plot.py                               # you'll need matplotli
 ## Using it in your own code
 
 ```cpp
-#include "src/dancingstar.hpp"
+#include "src/deltastar.hpp"
 using namespace dancing;
 
 Guard g;  g.route = {{0,4}, {1,4}, {2,4}};          // walks back and forth
-DancingStar planner(grid, {g}, /*maxT=*/100);       // grid: vector<string>, '#' = wall
+DeltaStar planner(grid, {g}, /*maxT=*/100);       // grid: vector<string>, '#' = wall
 auto r = planner.solve({0,0}, {9,9});               // start, goal as {x, y}
 if (r.found) std::cout << r.steps << "\n";          // r.path[t] = robot position at time t
 ```
