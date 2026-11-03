@@ -131,7 +131,7 @@ python3 benchmarks/plot.py                               # you'll need matplotli
 
 ```cpp
 #include "src/deltastar.hpp"
-using namespace dancing;
+using namespace delta;
 
 Guard g;  g.route = {{0,4}, {1,4}, {2,4}};          // walks back and forth
 DeltaStar planner(grid, {g}, /*maxT=*/100);       // grid: vector<string>, '#' = wall
