@@ -1,4 +1,4 @@
-// Dancing Star Algorithm - Space-Time A* for grids with patrolling (moving) obstacles.
+// Delta Star Algorithm - Space-Time A* for grids with patrolling (moving) obstacles.
 // State = (x, y, t). Moves: 4 directions or WAIT. Every move costs 1 time unit.
 // Guard occupancy is precomputed, so every move check is O(1).
 #pragma once
@@ -21,7 +21,7 @@ struct Guard {
     }
 };
 
-class DancingStar {
+class DeltaStar {
 public:
     struct Result {
         bool found = false;
@@ -30,7 +30,7 @@ public:
         long long expanded = 0;       // number of states popped from the heap
     };
 
-    DancingStar(std::vector<std::string> grid, std::vector<Guard> guards, int maxT)
+    DeltaStar(std::vector<std::string> grid, std::vector<Guard> guards, int maxT)
         : grid_(std::move(grid)), guards_(std::move(guards)), maxT_(maxT) {
         H_ = (int)grid_.size();
         W_ = (int)grid_[0].size();
